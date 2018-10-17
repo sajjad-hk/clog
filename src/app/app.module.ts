@@ -10,13 +10,17 @@ import { RouteModule } from './route/route.module';
 import { LoginComponent } from './views/login/login.component';
 import { ErrorComponent } from './views/error/error.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { RouteListComponent } from './views/route-list/route-list.component';
+import { RouteComponent } from './views/route/route.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ErrorComponent,
-    DashboardComponent
+    DashboardComponent,
+    RouteListComponent,
+    RouteComponent
   ],
   imports: [
     BrowserModule,

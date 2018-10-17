@@ -16,6 +16,7 @@ export class RouteService {
   constructor(private authService: AuthService,
               private afs: AngularFirestore) {
                 authService.user.subscribe(user => {
+                  console.log({user});
                   if (!_.isNil(user)) {
                     this.routesRef = this.afs.doc(`users/${user.uid}`).collection('routes');
                   }
@@ -23,11 +24,12 @@ export class RouteService {
    }
 
    addRoute(route: Route) {
-     return this.routesRef.add(route);
+
+     return this.routesRef.add({grade: '6a'});
    }
 
-   allRoutes(): AngularFirestoreCollection<any> {
-     return this.routesRef;
+   allRoutes() {
+     return this.routesRef.valueChanges();
    }
 
 }
