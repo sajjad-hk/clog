@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { AuthService } from './core/auth.service';
+import { RouteService } from './route/route.service';
 @Component({
   selector: 'clg-root',
   templateUrl: './app.component.html',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'climbing-log';
+
+  constructor(public auth: AuthService,
+              public routeService: RouteService) { }
 }
