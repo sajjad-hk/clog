@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from 'src/app/core/auth.service';
 import { RouteService } from 'src/app/route/route.service';
 import { Route } from 'src/app/models/route';
+import { RouteWizardComponent } from '../route-wizard/route-wizard.component';
 
 @Component({
   selector: 'clg-dashboard',
@@ -10,13 +11,17 @@ import { Route } from 'src/app/models/route';
 })
 export class DashboardComponent implements OnInit {
   routes: Route[];
+  @ViewChild(RouteWizardComponent) routeWizard: RouteWizardComponent;
   constructor(public auth: AuthService, private routeService: RouteService) { }
 
   ngOnInit() {
-    this.routeService.allRoutes().subscribe( r => {
-      this.routes = r;
-      console.log(r);
+    this.routeService.allRoutes().subscribe( routes => {
+      this.routes = routes;
     });
+  }
+
+  openRouteWizard() {
+    this.routeWizard.show();
   }
 
 }

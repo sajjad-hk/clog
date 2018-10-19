@@ -1,0 +1,18 @@
+<p-dialog [(visible)]="display">
+  Route-wizard works!
+  <clg-overall-state 
+      (finished)="onOverallStateSelectionEnd()" 
+      (close)="onClose()"></clg-overall-state>
+  <clg-route-grade 
+      (finished)="onRouteGradeSelectionEnd()" 
+      (close)="onClose()" 
+      (back)="onRouteGradeBack()"></clg-route-grade>
+  <clg-belay-mode 
+      (finished)="onBelayModeSelectionEnd()" 
+      (close)="onClose()" 
+      (back)="onBelayModeBack()"></clg-belay-mode>
+  <clg-tags 
+      (finished)="onTagsSelectionEnd()" 
+      (close)="onClose()"  
+      (back)="onTagsBack()"></clg-tags>
+</p-dialog>

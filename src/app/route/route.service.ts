@@ -16,7 +16,6 @@ export class RouteService {
   constructor(private authService: AuthService,
               private afs: AngularFirestore) {
                 authService.user.subscribe(user => {
-                  console.log({user});
                   if (!_.isNil(user)) {
                     this.routesRef = this.afs.doc(`users/${user.uid}`).collection('routes');
                   }
