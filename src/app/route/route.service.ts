@@ -24,7 +24,10 @@ export class RouteService {
 
    addRoute(route: Route) {
 
-     return this.routesRef.add({grade: '6a'});
+     return this.routesRef.add(route);
+   }
+
+   removeRoute() {
    }
 
    allRoutes() {

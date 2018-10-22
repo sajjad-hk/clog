@@ -9,8 +9,10 @@ import { timer } from 'rxjs';
 export class RouteGradeComponent implements OnInit {
 
   display = false;
+  grade: string;
   @Output() finished: EventEmitter<any> = new EventEmitter();
   @Output() back: EventEmitter<any> = new EventEmitter();
+  @Output() close: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -24,13 +26,15 @@ export class RouteGradeComponent implements OnInit {
   }
   onNext() {
     this.display = false;
-    timer(400)
-      .subscribe(() => this.finished.emit());
+    this.finished.emit({grade: this.grade});
   }
   onBack() {
     this.display = false;
-    timer(400)
-      .subscribe(() => this.back.emit());
+    this.back.emit();
+  }
+  onClose() {
+    this.display = false;
+    this.close.emit();
   }
 
 }

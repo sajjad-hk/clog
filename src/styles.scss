@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@include mat-core();
+//-------------------------------------------------------------------------------------------------------
+// DEFINING THE BASE THEMING
+//-------------------------------------------------------------------------------------------------------
+$primary: mat-palette($mat-blue-grey);
+$accent: mat-palette($mat-green);
+$warn: mat-palette($mat-red);
+$theme: mat-light-theme($primary, $accent, $warn);
+$dark-theme: mat-dark-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
+
+.route-wizard {
+    width: 35vw;
+    height: 65vh;
+    background-color: black;
+    position: absolute;
+    z-index: 4;
+    & .route-wizard-overlay {
+        width: 95%;
+        height: 95%;
+        margin: 2.5%;
+        top: 2.5%;
+        position: relative;
+        background-color: yellow;
+        z-index: 5;
+    }
+}
+
+.back-button {
+    float: left;
+    margin: 5px;
+    background: transparent;
+    border: none;
+}
+.next-button {
+    float: right;
+    margin: 5px;
+    background: transparent;
+    border: none;
+}
+.close-button {
+    float: right;
+    margin: 5px;
+    background: transparent;
+    border: none;
+}

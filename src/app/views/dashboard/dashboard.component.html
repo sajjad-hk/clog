@@ -1,9 +1,6 @@
-<p>
-  dashboard works!
-</p>
-<button (click)="auth.signOut()">Logout</button>
-<button (click)="routeService.addRoute()">new route</button>
-<button (click)="openRouteWizard()">Open Wizard</button>
-<clg-route-list [routes]="routes"></clg-route-list>
-
+<section class="dashboard">
+  <button (click)="auth.signOut()">Logout</button>
+  <button (click)="openRouteWizard()">Open Wizard</button>
+  <clg-route-list class="route-list" [routes]="routes"></clg-route-list>
+</section>
 <clg-route-wizard></clg-route-wizard>

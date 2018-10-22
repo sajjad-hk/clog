@@ -8,16 +8,16 @@ import { timer } from 'rxjs';
 })
 export class OverallStateComponent implements OnInit {
 
-  display = false;
+  display = true;
+  succeded: boolean;
   @Output() finished: EventEmitter<any> = new EventEmitter();
-  @Output() back: EventEmitter<any> = new EventEmitter();
+  @Output() close: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
 
   show() {
-    console.log('display');
     this.display = true;
   }
 
@@ -26,13 +26,11 @@ export class OverallStateComponent implements OnInit {
   }
   onNext() {
     this.display = false;
-    timer(400)
-      .subscribe(() => this.finished.emit());
+    this.finished.emit({succeded: this.succeded});
   }
-  onBack() {
+  onClose() {
     this.display = false;
-    timer(400)
-      .subscribe(() => this.back.emit());
+    this.close.emit();
   }
 
 }

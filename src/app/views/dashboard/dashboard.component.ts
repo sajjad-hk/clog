@@ -21,7 +21,9 @@ export class DashboardComponent implements OnInit {
   }
 
   openRouteWizard() {
-    this.routeWizard.show();
+    if (this.routeWizard) {
+      this.routeWizard.show();
+    }
   }
 
 }

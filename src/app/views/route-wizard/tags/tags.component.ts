@@ -11,6 +11,7 @@ export class TagsComponent implements OnInit {
   display = false;
   @Output() finished: EventEmitter<any> = new EventEmitter();
   @Output() back: EventEmitter<any> = new EventEmitter();
+  @Output() close: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -28,8 +29,7 @@ export class TagsComponent implements OnInit {
   }
   onBack() {
     this.display = false;
-    timer(400)
-      .subscribe(() => this.back.emit());
+    this.back.emit();
   }
 
 }

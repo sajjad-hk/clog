@@ -1,5 +1,8 @@
-<p-dialog [(visible)]="display">
-    tags works!
-    <button (click)="onNext()">Next</button>
-    <button (click)="onBack()">Back</button>
-</p-dialog>
+<div class="route-wizard-overlay" *ngIf="display">
+    <button class="close-button" (click)="onClose()">X</button>
+    <br>
+  <h3>Tags & Comments</h3>
+  <br>
+  <button class="next-button" (click)="onNext()">></button>
+  <button class="back-button" (click)="onBack()"><</button>
+</div>

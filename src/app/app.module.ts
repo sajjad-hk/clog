@@ -14,11 +14,13 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { RouteListComponent } from './views/route-list/route-list.component';
 import { RouteComponent } from './views/route/route.component';
 import { RouteWizardComponent } from './views/route-wizard/route-wizard.component';
-import { DialogModule } from 'primeng/dialog';
 import { OverallStateComponent } from './views/route-wizard/overall-state/overall-state.component';
 import { RouteGradeComponent } from './views/route-wizard/route-grade/route-grade.component';
 import { BelayModeComponent } from './views/route-wizard/belay-mode/belay-mode.component';
 import { TagsComponent } from './views/route-wizard/tags/tags.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -40,8 +42,11 @@ import { TagsComponent } from './views/route-wizard/tags/tags.component';
     AngularFireModule.initializeApp(environment.firebaseConfig, 'climbing-log'),
     CoreModule,
     RouteModule,
-    DialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

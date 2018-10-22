@@ -9,6 +9,7 @@ import { timer } from 'rxjs';
 export class BelayModeComponent implements OnInit {
 
   display = false;
+  belayMode: string;
   @Output() finished: EventEmitter<any> = new EventEmitter();
   @Output() close: EventEmitter<any> = new EventEmitter();
   @Output() back: EventEmitter<any> = new EventEmitter();
@@ -25,13 +26,11 @@ export class BelayModeComponent implements OnInit {
   }
   onNext() {
     this.display = false;
-    timer(400)
-      .subscribe(() => this.finished.emit());
+    this.finished.emit({belayMode: this.belayMode});
   }
   onBack() {
     this.display = false;
-    timer(400)
-      .subscribe(() => this.back.emit());
+    this.back.emit();
   }
 
 }

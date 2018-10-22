@@ -1,18 +1,17 @@
-<p-dialog [(visible)]="display">
-  Route-wizard works!
+<div class="route-wizard" *ngIf="display">
   <clg-overall-state 
-      (finished)="onOverallStateSelectionEnd()" 
+      (finished)="onOverallStateSelectionEnd($event)" 
       (close)="onClose()"></clg-overall-state>
   <clg-route-grade 
-      (finished)="onRouteGradeSelectionEnd()" 
+      (finished)="onRouteGradeSelectionEnd($event)" 
       (close)="onClose()" 
       (back)="onRouteGradeBack()"></clg-route-grade>
   <clg-belay-mode 
-      (finished)="onBelayModeSelectionEnd()" 
+      (finished)="onBelayModeSelectionEnd($event)" 
       (close)="onClose()" 
       (back)="onBelayModeBack()"></clg-belay-mode>
   <clg-tags 
-      (finished)="onTagsSelectionEnd()" 
+      (finished)="onTagsSelectionEnd($event)" 
       (close)="onClose()"  
       (back)="onTagsBack()"></clg-tags>
-</p-dialog>
+</div>
