@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {DialogModule} from 'primeng/dialog';
 import { OverallStateComponent } from './overall-state/overall-state.component';
 import { RouteGradeComponent } from './route-grade/route-grade.component';
 import { BelayModeComponent } from './belay-mode/belay-mode.component';
@@ -41,7 +40,7 @@ export class RouteWizardComponent implements OnInit {
   }
   onRouteGradeSelectionEnd(event) {
     console.log({event});
-    this.newRoute.grade = event.grade;
+    this.newRoute.grade = event;
     this.belayMode.show();
   }
   onRouteGradeBack() {

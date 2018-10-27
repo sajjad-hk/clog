@@ -46,7 +46,7 @@ import {MatInputModule} from '@angular/material/input';
     MatRadioModule,
     ReactiveFormsModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

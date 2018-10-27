@@ -10,6 +10,7 @@ export class RouteGradeComponent implements OnInit {
 
   display = false;
   grade: string;
+  gradeType: string;
   @Output() finished: EventEmitter<any> = new EventEmitter();
   @Output() back: EventEmitter<any> = new EventEmitter();
   @Output() close: EventEmitter<any> = new EventEmitter();
@@ -26,7 +27,7 @@ export class RouteGradeComponent implements OnInit {
   }
   onNext() {
     this.display = false;
-    this.finished.emit({grade: this.grade});
+    this.finished.emit({gradeType: this.gradeType, grade: this.grade});
   }
   onBack() {
     this.display = false;

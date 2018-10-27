@@ -9,6 +9,7 @@ import { timer } from 'rxjs';
 export class TagsComponent implements OnInit {
 
   display = false;
+  endingMode: string;
   @Output() finished: EventEmitter<any> = new EventEmitter();
   @Output() back: EventEmitter<any> = new EventEmitter();
   @Output() close: EventEmitter<any> = new EventEmitter();
