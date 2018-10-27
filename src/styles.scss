@@ -46,3 +46,9 @@ $dark-theme: mat-dark-theme($primary, $accent, $warn);
     background: transparent;
     border: none;
 }
+
+
+/* basic reset */
+body {
+    margin:0;
+}
