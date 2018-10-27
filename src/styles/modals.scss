@@ -1,0 +1,49 @@
+
+
+.modal-bg {
+    background-color: $modal-bg-color;    
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+.route-wizard {    
+    .route-wizard-overlay {
+        background-color: #ffdd00;
+        height: 95%;
+        max-height: 660px;
+        max-width: 345px;
+        margin: auto;
+        position: relative;
+        top: 2.5%;
+        width: 95%;
+        z-index: 5;
+    }
+}
+
+.back-button {
+    float: left;
+    margin: 5px;
+    background: transparent;
+    border: none;
+}
+.next-button {
+    float: right;
+    margin: 5px;
+    background: transparent;
+    border: none;
+}
+
+.close-button {
+    background-image: map-deep-get($icons, "modalClose");
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 24px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 24px;
+}

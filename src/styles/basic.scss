@@ -1,0 +1,17 @@
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+html {
+    background-color: #d8e2e5;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin:0;
+}
+
+

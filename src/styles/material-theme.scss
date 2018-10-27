@@ -1,0 +1,11 @@
+@include mat-core();
+
+//-------------------------------------------------------------------------------------------------------
+// DEFINING THE BASE THEMING
+//-------------------------------------------------------------------------------------------------------
+$primary: mat-palette($mat-blue-grey);
+$accent: mat-palette($mat-green);
+$warn: mat-palette($mat-red);
+$theme: mat-light-theme($primary, $accent, $warn);
+$dark-theme: mat-dark-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
