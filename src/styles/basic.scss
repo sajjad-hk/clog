@@ -5,13 +5,19 @@
     @return $map;
 }
 
+  
 html {
     background-color: #d8e2e5;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
 body {
     margin:0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 

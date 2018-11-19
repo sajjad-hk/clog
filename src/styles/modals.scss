@@ -1,5 +1,3 @@
-
-
 .modal-bg {
     background-color: $modal-bg-color;    
     height: 100vh;
@@ -9,9 +7,89 @@
     width: 100vw;
 }
 
-.route-wizard {    
+.route-wizard {
+    color: #fff;
+    text-align: center;
+
+    &-radio-step1 {
+        .mat-radio {
+            &-label {
+                display: block;
+                height: 110px;
+                padding-top: 24px;
+                width: 150px;
+                &::before {
+                    content: '';
+                    display: block;
+                    height: 40px;
+                    margin: 0 auto 15px auto;
+                    width: 40px;
+                }
+    
+            }
+            &-button {
+                display: block;
+                &.climbed label::before {
+                    background-image: map-deep-get($icons, "smileyDark");
+                }
+                &.failed label::before{
+                    background-image: map-deep-get($icons, "sadDark");
+                }
+                &.climbed label:checked::before,
+                &.climbed label:hover::before {
+                    background-image: map-deep-get($icons, "smileyWhite");
+                }
+                &.failed label:checked::before,
+                &.failed label:hover::before {
+                    background-image: map-deep-get($icons, "sadWhite");
+                }
+            }
+        }
+    }
+
+    &-radio-step2 {
+        margin: auto;
+        .mat-radio {
+            &-label {
+                display: inline-block;
+                height: 42px; 
+                line-height: 42px;
+                padding: 0 10px;
+                text-align: center;
+            }
+        }
+    }
+
+    .mat-radio { 
+        margin-top: 20px;           
+        &-label {
+            background-color: transparent;
+            border-radius: 3px;
+            color: rgba(0,0,0,0.3);            
+            font-weight: bold;
+            margin: 20px auto;            
+            text-align: center;
+            
+            &:hover {
+                background-color: rgba(0,0,0,.3);
+                color: #fff;
+            }
+            
+            &-content {
+                margin: auto;
+                padding: 0;
+            }
+        }
+        &-container {
+            display: none;
+        }
+       
+    }
+
+
     .route-wizard-overlay {
         background-color: #ffdd00;
+        border-radius: 3px;
         height: 95%;
         max-height: 660px;
         max-width: 345px;
@@ -20,6 +98,13 @@
         top: 2.5%;
         width: 95%;
         z-index: 5;
+
+        h3 {
+            font-size: 200%;
+            padding-top: 30%;
+            text-align: center;
+            text-shadow: 0 2px 3px rgba(0,0,0,0.15);
+        }
     }
 }
 
@@ -46,4 +131,8 @@
     right: 10px;
     top: 10px;
     width: 24px;
+    z-index: 1;
 }
+
+
+  
