@@ -7,16 +7,20 @@
     width: 100vw;
 }
 
-.route-wizard {
-    color: #fff;
-    text-align: center;
+// material components styling
 
-    &-radio-step1 {
+//step 1
+.step-1 {
+    .new-route-wizard-radio {
+        flex-direction: column;  
+        height: 100%; 
         .mat-radio {
+            display: flex;
             &-label {
                 display: block;
                 height: 110px;
-                padding-top: 24px;
+                margin: 2.0em auto;  
+                padding-top: 24px;                
                 width: 150px;
                 &::before {
                     content: '';
@@ -25,7 +29,6 @@
                     margin: 0 auto 15px auto;
                     width: 40px;
                 }
-    
             }
             &-button {
                 display: block;
@@ -44,30 +47,37 @@
                     background-image: map-deep-get($icons, "sadWhite");
                 }
             }
-        }
+        }             
     }
+}
 
-    &-radio-step2 {
-        margin: auto;
-        .mat-radio {
-            &-label {
-                display: inline-block;
-                height: 42px; 
-                line-height: 42px;
-                padding: 0 10px;
-                text-align: center;
+//step 2
+.step-2 {
+    .new-route-wizard {
+        &-radio {      
+            margin: auto;
+            text-align: center;
+            .mat-radio {
+                &-label {
+                    padding: .4em 1.0em;
+                    text-align: center;
+                }
             }
         }
-    }
+        &-knob {
+            width: 100%;
+        }
+    } 
+}
 
-    .mat-radio { 
-        margin-top: 20px;           
+
+.new-route-wizard {
+    .mat-radio {                    
         &-label {
             background-color: transparent;
             border-radius: 3px;
             color: rgba(0,0,0,0.3);            
-            font-weight: bold;
-            margin: 20px auto;            
+            font-weight: bold;                      
             text-align: center;
             
             &:hover {
@@ -82,57 +92,80 @@
         }
         &-container {
             display: none;
-        }
-       
+        }       
+    }    
+}
+
+// new route wizard common styling
+.new-route-wizard {    
+    align-content: stretch;
+    background-color: #ffdd00;
+    border-radius: 3px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+    max-height: 660px;
+    max-width: 345px;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    top: 2.5%;
+    width: 95%;
+    z-index: 5;
+    
+    & > div {
+        flex: 1;
     }
 
-
-    .route-wizard-overlay {
-        background-color: #ffdd00;
-        border-radius: 3px;
-        height: 95%;
-        max-height: 660px;
-        max-width: 345px;
-        margin: auto;
-        position: relative;
-        top: 2.5%;
-        width: 95%;
-        z-index: 5;
-
+    &-head {
+        max-height: 180px;
+        .close-button {
+            background-image: map-deep-get($icons, "modalClose");
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            height: 24px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 24px;
+            z-index: 1;
+        }        
         h3 {
-            font-size: 200%;
-            padding-top: 30%;
+            font-size: 2.0em;
+            padding-top: 26%;
             text-align: center;
             text-shadow: 0 2px 3px rgba(0,0,0,0.15);
         }
     }
+
+    &-main {        
+    }
+
+    &-foot {
+        max-height: 60px;
+        .back-button {
+            float: left;
+            margin: 5px;
+            background-image: map-deep-get($icons, "arrowLeft");
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            height: 28px;
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            width: 28px;
+            z-index: 1;
+        }
+    }   
 }
 
-.back-button {
-    float: left;
-    margin: 5px;
-    background: transparent;
-    border: none;
-}
-.next-button {
-    float: right;
-    margin: 5px;
-    background: transparent;
-    border: none;
-}
 
-.close-button {
-    background-image: map-deep-get($icons, "modalClose");
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    height: 24px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    width: 24px;
-    z-index: 1;
-}
+
+
+
 
 
   
