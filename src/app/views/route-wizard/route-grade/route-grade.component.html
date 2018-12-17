@@ -5,7 +5,7 @@
         </div>
         <div class="new-route-wizard-main">
                 <mat-radio-group class="new-route-wizard-radio" [(ngModel)]="gradeType">
-                        <mat-radio-button class="example-radio-button" value="FRENCH">French</mat-radio-button>
+                        <mat-radio-button class="example-radio-button" value="FRENCH" [checked]="op.checked" >French</mat-radio-button>
                         <mat-radio-button class="example-radio-button" value="POLISH">Polish</mat-radio-button>
                 </mat-radio-group>
                 <mat-form-field class="new-route-wizard-knob">
