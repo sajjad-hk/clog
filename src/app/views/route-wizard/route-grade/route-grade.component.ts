@@ -7,6 +7,7 @@ import { timer } from 'rxjs';
   styleUrls: ['./route-grade.component.scss']
 })
 export class RouteGradeComponent implements OnInit {
+  
   set2 = [
     {key: 0, value:'4a'},
     {key: 1, value:'4a+'},
@@ -39,11 +40,12 @@ export class RouteGradeComponent implements OnInit {
     {key: 28, value:'8c'},
     {key: 29, value:'8c+'},
     {key: 30, value:'9a'},]
-    item2 = {key: 2, value: '4b'}
 
-  display = false;
-  grade: string;
-  gradeType: string;
+    selectedGrade = {key: 6, value: '5a'}
+
+    display = false;
+    gradeType: string;
+
   @Output() finished: EventEmitter<any> = new EventEmitter();
   @Output() back: EventEmitter<any> = new EventEmitter();
   @Output() close: EventEmitter<any> = new EventEmitter();
@@ -60,7 +62,7 @@ export class RouteGradeComponent implements OnInit {
   }
   onNext() {
     this.display = false;
-    this.finished.emit({gradeType: this.gradeType, grade: this.grade});
+    this.finished.emit({gradeType: this.gradeType, grade: this.selectedGrade.value});
   }
   onBack() {
     this.display = false;
@@ -75,6 +77,6 @@ export class RouteGradeComponent implements OnInit {
   }
 
   onValueChange() {
-    console.log('%c INFO => Input value changed to:', 'color: green; font-weight: bold;', this.item2)
+    console.log('%c INFO => Input value changed to:', 'color: green; font-weight: bold;', this.selectedGrade)
   }
 }
