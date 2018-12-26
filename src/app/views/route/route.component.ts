@@ -11,7 +11,6 @@ export class RouteComponent implements OnInit {
   @Input() route: Route;
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

@@ -22,6 +22,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {GnarlModule} from 'gnarls';
+import {LoadingSpinnerComponent} from './views/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {GnarlModule} from 'gnarls';
     OverallStateComponent,
     RouteGradeComponent,
     BelayModeComponent,
-    TagsComponent
+    TagsComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

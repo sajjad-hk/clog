@@ -55,8 +55,7 @@ export class RouteWizardComponent implements OnInit {
   }
   onTagsSelectionEnd() {
     this.display = false;
-    console.log(this.newRoute);
-    this.routeService.addRoute(this.newRoute);
+    this.routeService.logRoute(this.newRoute);
   }
   onTagsBack() {
     this.belayMode.show();
