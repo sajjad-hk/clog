@@ -4,11 +4,12 @@
                 <h3>Scale and Grade</h3>
         </div>
         <div class="new-route-wizard-main">
-                <mat-radio-group class="new-route-wizard-radio" [(ngModel)]="gradeType">
+                <mat-radio-group class="new-route-wizard-radio" [(ngModel)]="gradeType" (change)="onGradeTypeChange($event)">
                         <mat-radio-button class="example-radio-button" value="FRENCH">French</mat-radio-button>
                         <mat-radio-button class="example-radio-button" value="POLISH">Polish</mat-radio-button>
                 </mat-radio-group>
-                <div class="gnarl-container">
+                <!-- French grader -->
+                <div class="gnarl-container" *ngIf="isFR">
                         <ls-gnarl
                                 [(value)] = "selectedGrade"
                                 (invalidInput) = "onInvalidInput()"
@@ -19,7 +20,43 @@
                                 [knobStrokeWidth]="1"
                                 [knobColor]="'#fff'"
                                 [opacity]="0.2"
-                                [set]="set2"
+                                [set]="FR_SET"
+                                [editableInput]="true">
+                
+                        <!-- Down arrow icon -->
+                                <svg class="down" width="40" height="40" x="-20" y="-20"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">       
+                                        <image xlink:href="../../../../../assets/icons/chevron_down.svg" height="40" width="40"/>
+                                </svg>
+                        
+                
+                        <!-- Up arrow icon -->
+                                <svg class="up" width="40" height="40" x="-20" y="-20"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">       
+                                        <image xlink:href="../../../../../assets/icons/chevron_up.svg" height="40" width="40"/>
+                                </svg>
+                
+                        <!-- Knob icon -->
+                                <svg class="knob" width="40" height="40" x="-20" y="-20"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">       
+                                        <!-- <image xlink:href="../assets/resources/knob.svg" height="40" width="40"/> -->
+                                </svg>
+                
+                        </ls-gnarl>
+                </div>
+                <!-- Polish grader -->
+                <div class="gnarl-container" *ngIf="isPL">
+                        <ls-gnarl
+                                [(value)] = "selectedGrade"
+                                (invalidInput) = "onInvalidInput()"
+                                (valueChange) = "onValueChange()"
+                                [buttonPos] = "'V'"
+                                [gnarlRadius]="130"
+                                [gnarlStrokeWidth]="6"
+                                [knobStrokeWidth]="1"
+                                [knobColor]="'#fff'"
+                                [opacity]="0.2"
+                                [set]="PL_SET"
                                 [editableInput]="true">
                 
                         <!-- Down arrow icon -->

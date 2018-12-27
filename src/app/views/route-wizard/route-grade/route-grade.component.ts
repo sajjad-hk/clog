@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { timer } from 'rxjs';
 
 @Component({
   selector: 'clg-route-grade',
@@ -8,7 +7,7 @@ import { timer } from 'rxjs';
 })
 export class RouteGradeComponent implements OnInit {
   
-  set2 = [
+  FR_SET = [
     {key: 0, value:'4a'},
     {key: 1, value:'4a+'},
     {key: 2, value:'4b'},
@@ -41,7 +40,37 @@ export class RouteGradeComponent implements OnInit {
     {key: 29, value:'8c+'},
     {key: 30, value:'9a'},]
 
-    selectedGrade = {key: 6, value: '5a'}
+  PL_SET = [
+    {key: 0,value:'IV+'},
+    {key: 1,value:'V-'},
+    {key: 2,value:'V'},
+    {key: 3,value:'V+'},
+    {key: 4,value:'VI-'},
+    {key: 5,value:'VI'},
+    {key: 6,value:'VI+'},
+    {key: 7,value:'VI.1'},
+    {key: 8,value:'VI.1+'},
+    {key: 9,value:'VI.2'},
+    {key: 10,value:'VI.2+'},
+    {key: 11,value:'VI.3'},
+    {key: 12,value:'VI.3+'},
+    {key: 13,value:'VI.4'},
+    {key: 14,value:'VI.4+'},
+    {key: 15,value:'VI.5'},
+    {key: 16,value:'VI.5+'},
+    {key: 17,value:'VI.6'},
+    {key: 18,value:'VI.6+'},
+    {key: 19,value:'VI.7'},
+    {key: 20,value:'VI.7+'},
+    {key: 21,value:'VI.8'},]
+
+    PL_FIRST={key: 2, value: 'V'}
+    FR_FIRST = {key: 6, value: '5a'}
+
+    selectedGrade = this.FR_FIRST
+
+    isFR = true
+    isPL = false
 
     display = false;
     gradeType: string;
@@ -51,7 +80,22 @@ export class RouteGradeComponent implements OnInit {
   @Output() close: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  onGradeTypeChange(event) {
+    console.log({event})
+    switch(event.value) {
+      case 'FRENCH':
+        this.isFR = true
+        this.isPL = false
+        this.selectedGrade = this.FR_FIRST
+        break
+      case 'POLISH':
+        this.isFR = false
+        this.isPL = true
+        this.selectedGrade = this.PL_FIRST
+        break
+    }
   }
 
   show() {
