@@ -21,6 +21,7 @@ import { TagsComponent } from './views/route-wizard/tags/tags.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import {GnarlModule} from 'gnarls';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import {MatInputModule} from '@angular/material/input';
     ReactiveFormsModule,
     FormsModule,
     MatInputModule,
+    GnarlModule
   ],
   providers: [],
   bootstrap: [AppComponent]

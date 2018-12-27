@@ -1,0 +1,27 @@
+// Todo Lucyna you can change this as you wish
+.gnarl-container {
+    ls-gnarl {
+        ls-gnarl-input {
+            .input-txt-value {
+                color: white;
+                font: Arial;
+            }
+            .input-txt-value:focus {
+                border-bottom: 1px solid white;
+                outline: none;
+                
+            }
+            .input-txt-value-invalid:focus {
+                border-bottom: 1px solid red;
+            }
+            .output-txt-value {
+                color: white;
+                font: Arial;
+
+                text-shadow: 0px 4px 3px rgba(0,0,0,0.5),
+                0px 8px 13px rgba(0,0,0,0.1),
+                0px 18px 23px rgba(0,0,0,0.1);
+            }
+        }
+    }
+}
