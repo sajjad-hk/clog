@@ -21,16 +21,23 @@ export class TagsComponent implements OnInit {
   show() {
     this.display = true;
   }
+
   hide() {
     this.display = false;
   }
+
   onNext() {
     this.display = false;
     this.finished.emit();
   }
+
   onBack() {
     this.display = false;
     this.back.emit();
+  }
+
+  onClose() {
+    
   }
 
 }

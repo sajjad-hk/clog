@@ -1,5 +1,9 @@
-<div>
-    <span>Belay: {{route?.belayMode}}</span><br>
-    <span>Grade: {{route?.grade?.gradeValue.value}}</span><br>
-    <span>Success: {{route?.succeded}}</span><br>
-</div><br>
+<mat-list-item class="logged-route">
+    <ul>
+        <li>Belay: {{route?.belayMode}}</li>
+        <li>Grade: {{route?.grade?.gradeValue.value}}</li>
+        <li>Succeded: {{route?.succeded | boolean}}</li>
+    </ul>
+</mat-list-item>
+<mat-divider></mat-divider>
+    

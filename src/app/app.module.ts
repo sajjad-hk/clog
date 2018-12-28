@@ -21,9 +21,10 @@ import {TagsComponent} from './views/route-wizard/tags/tags.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material/list'
 import {GnarlModule} from 'gnarls';
 import {LoadingSpinnerComponent} from './views/loading-spinner/loading-spinner.component';
-
+import {BooleanPipe} from './common/boolean.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import {LoadingSpinnerComponent} from './views/loading-spinner/loading-spinner.c
     RouteGradeComponent,
     BelayModeComponent,
     TagsComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    BooleanPipe
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,7 @@ import {LoadingSpinnerComponent} from './views/loading-spinner/loading-spinner.c
     ReactiveFormsModule,
     FormsModule,
     MatInputModule,
+    MatListModule,
     GnarlModule
   ],
   providers: [],
