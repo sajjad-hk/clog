@@ -7,7 +7,8 @@ import { ClimbingGrade, GRADE_BASE, IGrade } from 'src/app/models/route';
   styleUrls: ['./route-grade.component.scss']
 })
 export class RouteGradeComponent implements OnInit {
-  
+
+    CONFIG = GRADE_BASE
     isFR = true
     isPL = false
     display = false;
