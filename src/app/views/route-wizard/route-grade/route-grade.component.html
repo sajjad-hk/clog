@@ -5,8 +5,8 @@
         </div>
         <div class="new-route-wizard-main">
                 <mat-radio-group class="new-route-wizard-radio" [(ngModel)]="gradeType" (change)="onGradeTypeChange($event)">
-                        <mat-radio-button class="example-radio-button" value="FRENCH">French</mat-radio-button>
-                        <mat-radio-button class="example-radio-button" value="POLISH">Polish</mat-radio-button>
+                        <mat-radio-button value="FRENCH" [checked]="true">French</mat-radio-button>
+                        <mat-radio-button value="POLISH">Polish</mat-radio-button>
                 </mat-radio-group>
                 <!-- French grader -->
                 <div class="gnarl-container" *ngIf="isFR">

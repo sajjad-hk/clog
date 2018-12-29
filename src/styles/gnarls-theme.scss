@@ -2,25 +2,26 @@
 .gnarl-container {
     ls-gnarl {
         ls-gnarl-input {
+            
             .input-txt-value {
-                color: white;
-                font: Arial;
+                color: #fff;
+                font-size: 3.0em;
+                font-weight: bold;
             }
             .input-txt-value:focus {
-                border-bottom: 1px solid white;
+                border-bottom: 2px solid white;
                 outline: none;
-                
+                position: relative;                
             }
             .input-txt-value-invalid:focus {
-                border-bottom: 1px solid red;
+                border-bottom: 2px solid red;
+                text-shadow: 2px 2px 4px rgba(255,0,0,0.4);
             }
             .output-txt-value {
                 color: white;
-                font: Arial;
-
-                text-shadow: 0px 4px 3px rgba(0,0,0,0.5),
-                0px 8px 13px rgba(0,0,0,0.1),
-                0px 18px 23px rgba(0,0,0,0.1);
+                font-size: 3.2em;
+                font-weight: bold;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
             }
         }
     }

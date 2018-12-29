@@ -16,12 +16,15 @@
         height: 100%; 
         .mat-radio {
             display: flex;
+            &-button {
+                margin: auto;
+                width: 150px;
+            } 
             &-label {
                 display: block;
                 height: 110px;
                 margin: 2.0em auto;  
                 padding-top: 24px;                
-                width: 150px;
                 &::before {
                     content: '';
                     display: block;
@@ -37,12 +40,12 @@
                 }
                 &.failed label::before{
                     background-image: map-deep-get($icons, "sadDark");
-                }
-                &.climbed label:checked::before,
+                }               
+                &.climbed.mat-radio-checked label:before,
                 &.climbed label:hover::before {
                     background-image: map-deep-get($icons, "smileyWhite");
-                }
-                &.failed label:checked::before,
+                } 
+                &.failed.mat-radio-checked label:before,              
                 &.failed label:hover::before {
                     background-image: map-deep-get($icons, "sadWhite");
                 }
@@ -70,25 +73,31 @@
     } 
 }
 
-
 .new-route-wizard {
-    .mat-radio {                    
-        &-label {
+    .mat-radio {
+        &-button {
             background-color: transparent;
             border-radius: 3px;
             color: rgba(0,0,0,0.3);            
             font-weight: bold;                      
-            text-align: center;
-            
+            text-align: center;            
             &:hover {
-                background-color: rgba(0,0,0,.3);
+                background-color: rgba(0,0,0,.25);
                 color: #fff;
             }
-            
+
+        }
+        &-label {
             &-content {
                 margin: auto;
                 padding: 0;
             }
+        }    
+        &[ng-reflect-checked=true],
+        &-checked:hover,
+        &-checked {
+            background-color: rgba(0,0,0,.35);
+            color: #fff;
         }
         &-container {
             display: none;
