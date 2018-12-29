@@ -11,11 +11,10 @@ export class LoginComponent implements OnInit {
 
   constructor(public auth: AuthService, private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   googleLogin() {
-    this.auth.googleLogin().then(() => this.router.navigate(['/dashboard']));
+    this.auth.googleLogin()
   }
 
 }

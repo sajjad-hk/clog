@@ -1,6 +1,6 @@
 <section class="dashboard">
-  <button (click)="auth.signOut()">Logout</button>
+  <button (click)="signout()">Logout</button>
   <button (click)="openRouteWizard()">Open Wizard</button>
-  <clg-route-list class="route-list" [routes]="routes"></clg-route-list>
+  <clg-route-list class="route-list"></clg-route-list>
 </section>
 <clg-route-wizard></clg-route-wizard>

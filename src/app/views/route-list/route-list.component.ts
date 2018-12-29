@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Route } from 'src/app/models/route';
+import { RouteService } from 'src/app/route/route.service';
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'clg-route-list',
@@ -8,9 +10,15 @@ import { Route } from 'src/app/models/route';
 })
 export class RouteListComponent implements OnInit {
 
-  @Input() routes: Array<Route>;
-  constructor() { }
+  routes: Observable<Route[]>
 
-  ngOnInit() { }
+  constructor(public routeService: RouteService) { }
+
+  
+
+  ngOnInit() {
+    
+    this.routes = this.routeService.routes
+   }
 
 }
