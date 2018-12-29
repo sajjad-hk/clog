@@ -4,14 +4,16 @@
       <h3>Tags & Comments</h3>
   </div>
   <div class="new-route-wizard-main">
-      <mat-radio-group class="example-radio-group" [(ngModel)]="endingMode" (change)="onNext()">
-          <mat-radio-button class="example-radio-button" value="FLASH">Flash</mat-radio-button>
-          <mat-radio-button class="example-radio-button" value="ON_SIGHT">On sight</mat-radio-button>
-      </mat-radio-group>
-      <button class="add-another-btn" (click)="onNext()">Log another climb</button>
+      <mat-radio-group [(ngModel)]="endingMode" (change)="onNext()">
+          <mat-radio-button value="FLASH">Flash</mat-radio-button>
+          <mat-radio-button value="ON_SIGHT">On sight</mat-radio-button>
+      </mat-radio-group>     
+  </div>
+  <div class="new-route-wizard-bottom">
+    <button class="add-another-btn text-btn">Log another climb</button>
   </div>
   <div class="new-route-wizard-foot">
-      <button class="next-button" (click)="onNext()">Done</button>
-      <button class="back-button" (click)="onBack()"></button>
+      <button class="btn next-btn text-btn" (click)="onNext()">Done</button>
+      <button class="btn back-btn" (click)="onBack()"></button>
   </div>  
 </div>
