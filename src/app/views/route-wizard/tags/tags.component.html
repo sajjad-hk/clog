@@ -1,19 +1,19 @@
 <div class="new-route-wizard step-4" *ngIf="display">
   <div class="new-route-wizard-head">
-      <button class="close-button" (click)="onClose()"></button>
+      <button class="btn-close" (click)="onClose()"></button>
       <h3>Tags & Comments</h3>
   </div>
   <div class="new-route-wizard-main">
-      <mat-radio-group [(ngModel)]="endingMode" (change)="onNext()">
-          <mat-radio-button value="FLASH">Flash</mat-radio-button>
-          <mat-radio-button value="ON_SIGHT">On sight</mat-radio-button>
+      <mat-radio-group class="new-route-wizard-radio" [(ngModel)]="endingMode">
+          <mat-radio-button class="flash" value="FLASH">Flash</mat-radio-button>
+          <mat-radio-button class="os" value="ON_SIGHT">On sight</mat-radio-button>
       </mat-radio-group>     
   </div>
   <div class="new-route-wizard-bottom">
-    <button class="add-another-btn text-btn">Log another climb</button>
+    <button class="btn btn-add-another btn-text">Log another climb</button>
   </div>
   <div class="new-route-wizard-foot">
-      <button class="btn next-btn text-btn" (click)="onNext()">Done</button>
-      <button class="btn back-btn" (click)="onBack()"></button>
+      <button class="btn btn-done btn-text" (click)="onNext()">Done</button>
+      <button class="btn btn-back" (click)="onBack()"></button>
   </div>  
 </div>

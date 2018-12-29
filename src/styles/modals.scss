@@ -71,7 +71,6 @@
 }
 
 //step 3
-
 .step-3 {
     .new-route-wizard-radio {
         height: 100%;        
@@ -85,6 +84,58 @@
             }
             &-label {   
                 display: block; 
+            }  
+        }            
+    }
+}
+
+//step 4
+.step-4 {
+    .new-route-wizard-radio {
+        height: 100%;        
+        .mat-radio {
+            &-button {
+                background-color: #f6f6f6;                
+                color: #8b8b8b;
+                font-weight: normal;
+                margin: 10px;
+                height: 40px;
+                line-height: 40px;               
+
+                &.flash label::before {                    
+                    background-image: map-deep-get($icons, "flashDark");
+                }
+                &.os label::before {
+                    background-image: map-deep-get($icons, "eyeDark");
+                }
+                &.flash.mat-radio-checked label:before, 
+                &.flash label:hover::before {
+                    background-image: map-deep-get($icons, "flashWhite");
+                }
+                &.os.mat-radio-checked label:before, 
+                &.os label:hover::before {
+                    background-image: map-deep-get($icons, "eyeWhite");
+                }
+            }
+            &-checked {
+                background-color: rgba(0,0,0,0.3);
+                color: #fff;
+            }
+            &-label {        
+                display: block; 
+                padding: 0 30px 0 45px;
+                position: relative;
+                &::before {
+                    background-repeat: no-repeat;
+                    background-position: left center;
+                    content: '';
+                    display: block;
+                    left: 15px;
+                    height: 40px;
+                    margin: 0 auto 15px auto;
+                    position: absolute;
+                    width: 40px;
+                }
             }  
         }            
     }
@@ -111,7 +162,6 @@
                 padding: 0;
             }
         }    
-        &[ng-reflect-checked=true],
         &-checked:hover,
         &-checked {
             background-color: rgba(0,0,0,.35);
@@ -146,19 +196,7 @@
     }
 
     &-head {
-        max-height: 180px;
-        .close-button {
-            background-image: map-deep-get($icons, "modalClose");
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            height: 24px;
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            width: 24px;
-            z-index: 1;
-        }        
+        max-height: 180px;               
         h3 {
             font-size: 2.0em;
             padding-top: 26%;
@@ -178,19 +216,9 @@
     }   
 
     // buttons
-    .back-btn {
-        float: left;
-        margin: 5px;
-        background-image: map-deep-get($icons, "arrowLeft");
-        border: none;
-        cursor: pointer;
-        height: 28px;
-        position: absolute;
-        left: 10px;
-        bottom: 10px;
-        width: 28px;
-        z-index: 1;
-    }
+
+    
+
 }
 
 
