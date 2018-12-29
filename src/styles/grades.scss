@@ -1,0 +1,30 @@
+.route-list {
+    .route {
+        border-left-width: 5px;
+        border-left-style: solid;
+        &-4a {border-left-color: map-deep-get($gradeColors, "route4a");}
+        &-4a-plus {border-left-color: map-deep-get($gradeColors, "route4aPlus");}
+        &-4b {border-left-color: map-deep-get($gradeColors, "route4b");}
+        &-4b-plus {border-left-color: map-deep-get($gradeColors, "route4bPlus");}
+        &-4c {border-left-color: map-deep-get($gradeColors, "route4c");}
+        &-4c-plus {border-left-color: map-deep-get($gradeColors, "route4cPlus");}
+        &-5a {border-left-color: map-deep-get($gradeColors, "route5a");}
+        &-5a-plus {border-left-color: map-deep-get($gradeColors, "route5aPlus");}
+        &-5b {border-left-color: map-deep-get($gradeColors, "route5b");}
+        &-5b-plus {border-left-color: map-deep-get($gradeColors, "route5bPlus");}
+        &-5c {border-left-color: map-deep-get($gradeColors, "route5c");}
+        &-5c-plus {border-left-color: map-deep-get($gradeColors, "route5cPlus");}
+        &-6a {border-left-color: map-deep-get($gradeColors, "route6a");}
+        &-6a-plus {border-left-color: map-deep-get($gradeColors, "route6aPlus");}
+        &-6b {border-left-color: map-deep-get($gradeColors, "route6b");}
+        &-6b-plus {border-left-color: map-deep-get($gradeColors, "route6bPlus");}
+        &-6c {border-left-color: map-deep-get($gradeColors, "route6c");}
+        &-6c-plus {border-left-color: map-deep-get($gradeColors, "route6cPlus");}
+        &-7a {border-left-color: map-deep-get($gradeColors, "route7a");}
+        &-7a-plus {border-left-color: map-deep-get($gradeColors, "route7aPlus");}
+        &-7b {border-left-color: map-deep-get($gradeColors, "route7b");}
+        &-7b-plus {border-left-color: map-deep-get($gradeColors, "route7bPlus");}
+    }
+}
+
+

@@ -1,9 +1,11 @@
-<mat-list-item class="logged-route">
-    <ul>
-        <li>Belay: {{route?.belayMode}}</li>
-        <li>Grade: {{route?.grade?.gradeValue.value}}</li>
-        <li>Succeded: {{route?.succeded | boolean}}</li>
-    </ul>
+<mat-list-item>
+    <div class="route route-{{route?.grade?.gradeValue.value}} route-{{route?.succeded | boolean}}">
+        <div class="route-grade">
+            {{route?.grade?.gradeValue.value}}
+        </div>
+        <div class="route-belay route-belay-{{route?.belayMode}}">
+            {{route?.belayMode}}
+        </div>
+    </div>    
 </mat-list-item>
-<mat-divider></mat-divider>
     

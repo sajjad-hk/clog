@@ -1,6 +1,29 @@
 $modal-bg-color: rgba(0,0,0,0.4);
 $color-black: #000;
-
+$gradeColors: (
+   route4a: #6229B8,
+   route4aPlus: #473ECE,
+   route4b: #4D87EB,
+   route4bPlus: #36C8FF,
+   route4c: #30D6D6,
+   route4cPlus: #009A66,
+   route5a: #35B768,
+   route5aPlus: #76D448,   
+   route5b: #BDE221,
+   route5bPlus: #FFE600,  
+   route5c: #FFC400,
+   route5cPlus: #FCA138,   
+   route6a: #F96D01,
+   route6aPlus: #FF4534,
+   route6b: #E80018,
+   route6bPlus: #CC0015,
+   route6c: #D80267,
+   route6cPlus: #FC2B94,
+   route7a: #EB53B3,
+   route7aPlus: #BE40A0,   
+   route7b: #A72195,
+   route7bPlus: #851485
+);
 $icons: (
    modalClose: url("/assets/icons/close.svg"),
    smileyDark: url("/assets/icons/smile-dark.svg"),
@@ -17,12 +40,5 @@ $icons: (
    flashDark: url("/assets/icons/flash-dark.svg"),
    plusDark: url("/assets/icons/plus-dark.svg"),
    checkWhite: url("/assets/icons/checkmark-white.svg")
-)
-
-
-
-// $gradeColors: (
-  
-// )
-
+);
 
