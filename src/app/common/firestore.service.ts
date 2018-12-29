@@ -69,7 +69,7 @@ export class FirestoreService {
       const timestamp = this.timestamp
       return this.doc(ref).set({
         ...data,
-        updateAt: timestamp,
+        updatedAt: timestamp,
         createdAt: timestamp
       })
     }

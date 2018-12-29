@@ -47,7 +47,15 @@ export class AuthService {
       displayName: user.displayName,
     }
 
-    return this.db.update(path, data)
+    return this.userDocExists(user.uid) ? this.db.update(path, data) : this.db.set(path, data)
+  }
+
+  async userDocExists(id: string) {
+    let exists = false
+    await this.db.col('users').doc(id).get().subscribe( doc => {
+      exists = doc.exists
+    })
+    return exists
   }
 
   uid() {
