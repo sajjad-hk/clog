@@ -47,7 +47,7 @@ export class AuthService {
       displayName: user.displayName,
     }
 
-    return this.userDocExists(user.uid) ? this.db.update(path, data) : this.db.set(path, data)
+    return this.db.set(path, data)
   }
 
   async userDocExists(id: string) {
