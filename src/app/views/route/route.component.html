@@ -1,1 +1,9 @@
-<p>{{route | json}}</p>
+<mat-list-item class="logged-route">
+    <ul>
+        <li>Belay: {{route?.belayMode}}</li>
+        <li>Grade: {{route?.grade?.gradeValue.value}}</li>
+        <li>Succeded: {{route?.succeded | boolean}}</li>
+    </ul>
+</mat-list-item>
+<mat-divider></mat-divider>
+    

@@ -32,5 +32,8 @@ export class BelayModeComponent implements OnInit {
     this.display = false;
     this.back.emit();
   }
+  onClose() {
+    
+  }
 
 }

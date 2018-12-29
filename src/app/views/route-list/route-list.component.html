@@ -1,3 +1,3 @@
-<div class="route-wizard-overlay" *ngFor="let route of routes | async; trackBy : routeService.trackById">
+<mat-list class="route-wizard-overlay" *ngFor="let route of routes | async; trackBy : routeService.trackById">
   <clg-route [route]="route"></clg-route>
-</div>
+</mat-list>

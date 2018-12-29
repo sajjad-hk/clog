@@ -11,7 +11,7 @@
                 <!-- French grader -->
                 <div class="gnarl-container" *ngIf="isFR">
                         <ls-gnarl
-                                [(value)] = "selectedGrade"
+                                [(value)] = "grade.gradeValue"
                                 (invalidInput) = "onInvalidInput()"
                                 (valueChange) = "onValueChange()"
                                 [buttonPos] = "'V'"
@@ -20,7 +20,7 @@
                                 [knobStrokeWidth]="1"
                                 [knobColor]="'#fff'"
                                 [opacity]="0.2"
-                                [set]="FR_SET"
+                                [set]="CONFIG.FR_SET"
                                 [editableInput]="true">
                 
                         <!-- Down arrow icon -->
@@ -37,9 +37,9 @@
                                 </svg>
                 
                         <!-- Knob icon -->
-                                <svg class="knob" width="40" height="40" x="-20" y="-20"
+                                <svg class="knob" width="40" height="40" x="-20" y="-20" (dblclick)="onNext($event)"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">       
-                                        <!-- <image xlink:href="../assets/resources/knob.svg" height="40" width="40"/> -->
+                                        <image xlink:href="../../../../../assets/icons/knob.svg" height="40" width="40"/>
                                 </svg>
                 
                         </ls-gnarl>
@@ -47,7 +47,7 @@
                 <!-- Polish grader -->
                 <div class="gnarl-container" *ngIf="isPL">
                         <ls-gnarl
-                                [(value)] = "selectedGrade"
+                                [(value)] = "grade.gradeValue"
                                 (invalidInput) = "onInvalidInput()"
                                 (valueChange) = "onValueChange()"
                                 [buttonPos] = "'V'"
@@ -56,7 +56,7 @@
                                 [knobStrokeWidth]="1"
                                 [knobColor]="'#fff'"
                                 [opacity]="0.2"
-                                [set]="PL_SET"
+                                [set]="CONFIG.PL_SET"
                                 [editableInput]="true">
                 
                         <!-- Down arrow icon -->
@@ -73,16 +73,15 @@
                                 </svg>
                 
                         <!-- Knob icon -->
-                                <svg class="knob" width="40" height="40" x="-20" y="-20"
+                                <svg class="knob" width="40" height="40" x="-20" y="-20"  (dblclick)="onNext($event)"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">       
-                                        <!-- <image xlink:href="../assets/resources/knob.svg" height="40" width="40"/> -->
+                                <image xlink:href="../../../../../assets/icons/knob.svg" height="40" width="40"/>
                                 </svg>
                 
                         </ls-gnarl>
                 </div>
         </div>
         <div class="new-route-wizard-foot">
-                <button class="next-button" (click)="onNext()">></button>
                 <button class="back-button" (click)="onBack()"></button>
         </div>
 </div>

@@ -30,9 +30,8 @@ export class RouteWizardComponent implements OnInit {
     // this.overallState.show();
   }
 
-  onOverallStateSelectionEnd(event) {
-    console.log({event});
-    this.newRoute.succeded = event.succeded;
+  onOverallStateSelectionEnd(event: boolean) {
+    this.newRoute.succeded = event;
     this.routeGrade.show();
   }
   onClose() {
@@ -55,7 +54,7 @@ export class RouteWizardComponent implements OnInit {
   }
   onTagsSelectionEnd() {
     this.display = false;
-    this.routeService.logRoute(this.newRoute);
+    this.routeService.logRoute(this.newRoute as Route);
   }
   onTagsBack() {
     this.belayMode.show();
