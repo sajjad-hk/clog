@@ -1,5 +1,5 @@
 <mat-list-item>
-    <div class="route route-{{route?.grade?.gradeValue.value}} route-{{route?.succeded | boolean}}">
+    <div class="route route-{{stringfy(route?.grade?.gradeValue.value)}} route-{{route?.succeded | boolean}}">
         <div class="route-grade">
             {{route?.grade?.gradeValue.value}}
         </div>

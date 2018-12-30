@@ -13,4 +13,8 @@ export class RouteComponent implements OnInit {
 
   ngOnInit() { }
 
+  stringfy(value: string) {
+    return value.replace('+', '-plus')
+  }
+
 }
