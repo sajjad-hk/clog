@@ -43,7 +43,7 @@ export class RouteService {
    get routes(): Observable<Route[]> {
       return this.auth.user$.pipe(
         switchMap( user => 
-            this.db.col$('routes', (ref: any) => 
+            this.db.colWithIds$('routes', (ref: any) => 
               ref
                 .where('uid', '==', user ? user.uid : null)
                 .orderBy('createdAt', 'desc')

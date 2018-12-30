@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Route } from 'src/app/models/route';
+import { FirestoreService } from 'src/app/common/firestore.service';
 
 @Component({
   selector: 'clg-route',
@@ -9,12 +10,16 @@ import { Route } from 'src/app/models/route';
 export class RouteComponent implements OnInit {
 
   @Input() route: Route;
-  constructor() { }
+  constructor(private db: FirestoreService) { }
 
   ngOnInit() { }
 
   stringfy(value: string) {
     return value.replace('+', '-plus')
+  }
+
+  onDelete(id: string) {
+    this.db.delete(`routes/${id}`)
   }
 
 }
