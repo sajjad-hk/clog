@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { timer } from 'rxjs';
+import { EndingMode } from 'src/app/models/route';
 
 @Component({
   selector: 'clg-tags',
@@ -8,14 +8,29 @@ import { timer } from 'rxjs';
 })
 export class TagsComponent implements OnInit {
 
+  endingMode = {
+    flash: false,
+    onSight: false
+  } as EndingMode
+
   display = false;
-  endingMode: string;
-  @Output() finished: EventEmitter<any> = new EventEmitter();
+  @Output() finished: EventEmitter<EndingMode> = new EventEmitter();
   @Output() back: EventEmitter<any> = new EventEmitter();
   @Output() close: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  onChange(e: any) {
+
+    switch(e.id) {
+      case 'FLASH':
+        this.endingMode.onSight = !this.endingMode.flash
+      break
+      case 'OS':
+        this.endingMode.flash = !this.endingMode.onSight
+      break
+    }
   }
 
   show() {
@@ -28,7 +43,7 @@ export class TagsComponent implements OnInit {
 
   onNext() {
     this.display = false;
-    this.finished.emit();
+    this.finished.emit(this.endingMode);
   }
 
   onBack() {

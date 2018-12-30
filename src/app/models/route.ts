@@ -4,6 +4,7 @@ export interface Route {
     succeded: boolean
     belayMode: string
     grade: any
+    endingMode: EndingMode
 }
 
 export interface ClimbingGrade {
@@ -14,6 +15,11 @@ export interface ClimbingGrade {
 export interface IGrade {
     key: number
     value: string
+}
+
+export interface EndingMode {
+    flash: boolean
+    onSight: boolean
 }
 
 export const GRADE_BASE = {

@@ -25,6 +25,7 @@ import {MatListModule} from '@angular/material/list'
 import {GnarlModule} from 'gnarls';
 import {LoadingSpinnerComponent} from './views/loading-spinner/loading-spinner.component';
 import {BooleanPipe} from './common/boolean.pipe';
+import {MatCheckboxModule} from '@angular/material/checkbox'
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,8 @@ import {BooleanPipe} from './common/boolean.pipe';
     FormsModule,
     MatInputModule,
     MatListModule,
-    GnarlModule
+    GnarlModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

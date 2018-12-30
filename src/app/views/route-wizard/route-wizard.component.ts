@@ -3,8 +3,7 @@ import { OverallStateComponent } from './overall-state/overall-state.component';
 import { RouteGradeComponent } from './route-grade/route-grade.component';
 import { BelayModeComponent } from './belay-mode/belay-mode.component';
 import { TagsComponent } from './tags/tags.component';
-import { Observable } from 'rxjs';
-import { Route } from 'src/app/models/route';
+import { Route, EndingMode, ClimbingGrade } from 'src/app/models/route';
 import { RouteService } from 'src/app/route/route.service';
 
 @Component({
@@ -37,8 +36,7 @@ export class RouteWizardComponent implements OnInit {
   onClose() {
     this.display = false;
   }
-  onRouteGradeSelectionEnd(event) {
-    console.log({event});
+  onRouteGradeSelectionEnd(event: ClimbingGrade) {
     this.newRoute.grade = event;
     this.belayMode.show();
   }
@@ -52,8 +50,9 @@ export class RouteWizardComponent implements OnInit {
   onBelayModeBack() {
     this.routeGrade.show();
   }
-  onTagsSelectionEnd() {
+  onTagsSelectionEnd(event: EndingMode) {
     this.display = false;
+    this.newRoute.endingMode = event
     this.routeService.logRoute(this.newRoute as Route);
   }
   onTagsBack() {

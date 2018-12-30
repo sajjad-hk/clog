@@ -18,7 +18,7 @@ export class RouteGradeComponent implements OnInit {
       gradeValue: GRADE_BASE.FR_FIRST as IGrade
     }
 
-  @Output() finished: EventEmitter<any> = new EventEmitter();
+  @Output() finished: EventEmitter<ClimbingGrade> = new EventEmitter();
   @Output() back: EventEmitter<void> = new EventEmitter();
   @Output() close: EventEmitter<void> = new EventEmitter();
   constructor() { }
@@ -45,18 +45,21 @@ export class RouteGradeComponent implements OnInit {
   show() {
     this.display = true;
   }
+
   hide() {
     this.display = false;
   }
-  onNext(event: any) {
-    console.log({event})
+
+  onNext() {
     this.display = false;
     this.finished.emit(this.grade);
   }
+
   onBack() {
     this.display = false;
     this.back.emit();
   }
+
   onClose() {
     this.display = false;
     this.close.emit();

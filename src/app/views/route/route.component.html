@@ -6,6 +6,7 @@
         <div class="route-belay route-belay-{{route?.belayMode}}">
             {{route?.belayMode}}
         </div>
+        <div>{{route?.endingMode | json}}</div>
         <button class="" (click)="onDelete(route.id)">Del</button>
     </div>    
 </mat-list-item>
