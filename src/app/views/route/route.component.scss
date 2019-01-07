@@ -13,9 +13,18 @@
         margin-right: 10px;
     }
 
+    &-style {
+        background-color: #374f94;
+        border-radius: 3px;
+        color: #fff;
+        display: inline-block;
+        margin-right: 5px;
+        padding: 0 3px;
+    }
     &-belay {
         border-radius: 3px;
         display: inline-block;
+        margin-right: 5px;
         padding: 0 3px;
 
         &-Lead {

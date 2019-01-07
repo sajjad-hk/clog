@@ -1,5 +1,8 @@
 <section class="dashboard">
-  <button (click)="signout()">Logout</button>
+  <header class="app-header">
+    Climbing log
+    <button class="btn btn-logout" (click)="signout()"></button>
+  </header>  
   <div class="graph-container"></div>
   <button (click)="openRouteWizard()" class="btn btn-fab btn-add-new-route"></button>
   <clg-route-list class="route-list"></clg-route-list>

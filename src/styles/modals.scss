@@ -5,6 +5,7 @@
     position: fixed;
     top: 0;
     width: 100vw;
+    z-index: 10;
 }
 
 // material components styling
@@ -184,12 +185,11 @@
     height: 95%;
     max-height: 660px;
     max-width: 345px;
-    margin: auto;
+    margin: 20px auto auto auto;
     position: relative;
     text-align: center;
     top: 2.5%;
     width: 95%;
-    z-index: 5;
     
     & > div {
         flex: 1;
