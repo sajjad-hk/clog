@@ -7,7 +7,8 @@
             {{route?.belayMode | belayMode}}
         </div>
         <div class="route-style">{{route?.endingMode | endingMode}}</div>
-        <button class="" (click)="onDelete(route.id)">Del</button>
+        <button class="btn btn-edit" (click)="onDelete(route.id)"></button>
+        <button class="btn btn-delete" (click)="onDelete(route.id)"></button>
     </div>    
 </mat-list-item>
     
