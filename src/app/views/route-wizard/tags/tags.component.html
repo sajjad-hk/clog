@@ -5,14 +5,10 @@
   </div>
   <div class="new-route-wizard-main">
 
-        <section class="new-route-wizard-radio">
+        <section class="new-route-wizard-check">
                 <mat-checkbox id="FLASH" #f class="flash" [(ngModel)]="endingMode.flash" (change)="onChange(f)">Flash</mat-checkbox>
                 <mat-checkbox id="OS" #o class="os" [(ngModel)]="endingMode.onSight" (change)="onChange(o)">On sight</mat-checkbox>
         </section>
-      <!-- <mat-radio-group class="new-route-wizard-radio" [(ngModel)]="endingMode">
-          <mat-radio-button class="flash" value="FLASH">Flash</mat-radio-button>
-          <mat-radio-button class="os" value="ON_SIGHT">On sight</mat-radio-button>
-      </mat-radio-group>      -->
   </div>
   <div class="new-route-wizard-bottom">
     <button class="btn btn-add-another btn-text">Log another climb</button>

@@ -92,40 +92,47 @@
 
 //step 4
 .step-4 {
-    .new-route-wizard-radio {
+    .new-route-wizard-check {
         height: 100%;        
-        .mat-radio {
-            &-button {
-                background-color: #f6f6f6;                
-                color: #8b8b8b;
-                font-weight: normal;
-                margin: 10px;
-                height: 40px;
-                line-height: 40px;               
+        
+        .mat-checkbox {            
+            font-weight: normal;
+            margin: 10px;             
 
-                &.flash label::before {                    
-                    background-image: map-deep-get($icons, "flashDark");
-                }
-                &.os label::before {
-                    background-image: map-deep-get($icons, "eyeDark");
-                }
-                &.flash.mat-radio-checked label:before, 
-                &.flash label:hover::before {
-                    background-image: map-deep-get($icons, "flashWhite");
-                }
-                &.os.mat-radio-checked label:before, 
-                &.os label:hover::before {
-                    background-image: map-deep-get($icons, "eyeWhite");
-                }
+            &.flash .mat-checkbox-label::before {                    
+                background-image: map-deep-get($icons, "flashDark");
             }
+            &.os .mat-checkbox-label::before {
+                background-image: map-deep-get($icons, "eyeDark");
+            }
+            &.flash.mat-checkbox-checked .mat-checkbox-label:before, 
+            &.flash .mat-checkbox-label:hover::before {
+                background-image: map-deep-get($icons, "flashWhite");
+            }
+            &.os.mat-checkbox-checked .mat-checkbox-label:before, 
+            &.os .mat-checkbox-label:hover::before {
+                background-image: map-deep-get($icons, "eyeWhite");
+            }
+            
+            .mat-checkbox-inner-container {
+                display: none;
+            }
+
             &-checked {
-                background-color: rgba(0,0,0,0.3);
-                color: #fff;
+                .mat-checkbox-label {
+                    background-color: rgba(0,0,0,0.3);                    
+                    color: #fff;
+                }
+               
             }
+
             &-label {        
-                display: block; 
+                display: block;
+                height: 40px;
+                line-height: 40px;  
                 padding: 0 30px 0 45px;
                 position: relative;
+
                 &::before {
                     background-repeat: no-repeat;
                     background-position: left center;
@@ -144,6 +151,23 @@
 
 
 .new-route-wizard {
+    .mat-checkbox {                  
+        font-weight: bold;                      
+        text-align: center;            
+    
+        
+        &-label {
+            background-color: #f6f6f6; 
+            border-radius: 3px;               
+            color: rgba(0,0,0,0.3); 
+
+            &:hover {
+                background-color: rgba(0,0,0,.35);
+                color: #fff;
+            } 
+        }       
+    }
+
     .mat-radio {
         &-button {
             background-color: transparent;
@@ -154,9 +178,9 @@
             &:hover {
                 background-color: rgba(0,0,0,.25);
                 color: #fff;
-            }
-
+            }        
         }
+
         &-label {
             &-content {
                 margin: auto;
@@ -171,7 +195,28 @@
         &-container {
             display: none;
         }       
-    }    
+    }
+
+    .route-hint {
+        color: rgba(0,0,0,0.4);
+        display: inline-block;
+        font-size: 16px;
+        padding-left: 30px;
+        position: relative;
+        
+        &::before {
+            background-image: map-deep-get($icons, "infoDark");
+            background-position: center center;
+            background-repeat: no-repeat;
+            content:'';
+            display: inline-block;
+            height: 24px;
+            left: 0;
+            position: absolute;
+            top: -4px;
+            width: 24px;
+        }
+    }
 }
 
 // new route wizard common styling
@@ -207,16 +252,14 @@
 
     &-main {        
     }
+
     &-bottom {
         max-height: 60px;
     }
 
     &-foot {
         max-height: 60px;
-    }   
-
-    // buttons
-
+    }  
     
 
 }

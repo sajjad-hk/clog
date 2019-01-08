@@ -24,14 +24,12 @@
     height: 60px;
     width: 40px;
   }
-
-  &-delete {
-    background-color: #ffebeb;
-    background-image: map-deep-get($icons, "trashRed");
+  &-delete,
+  &-edit {
     background-position: center center;
     border-radius: 17px;
     height: 34px;
-    margin-top: -17px;
+    margin-top: -20px;
     position: absolute;
     right: 40px;
     text-align: center;
@@ -39,17 +37,15 @@
     width: 34px;
   }
 
+  &-delete {
+    background-color: #ffebeb;
+    background-image: map-deep-get($icons, "trashRed");
+  }
+
   &-edit {    
     background-image: map-deep-get($icons, "editDark");
     background-position: center center;
-    border-radius: 17px;
-    height: 34px;
-    margin-top: -17px;
-    position: absolute;
-    right: 80px;
-    text-align: center;
-    top: 50%;
-    width: 34px;
+    right: 80px;    
   }
 
   &-add-another {
