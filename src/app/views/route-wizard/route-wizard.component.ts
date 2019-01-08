@@ -26,7 +26,6 @@ export class RouteWizardComponent implements OnInit {
 
   show() {
     this.display = true;
-    // this.overallState.show();
   }
 
   onOverallStateSelectionEnd(event: boolean) {

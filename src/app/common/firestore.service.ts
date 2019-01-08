@@ -75,10 +75,12 @@ export class FirestoreService {
     }
 
     update<T>(ref: DocPredicate<T>, data: any): Promise<void> {
+      console.log('Here update')
       return this.doc(ref).update({
         ...data,
         updatedAt: this.timestamp,
       });
+      
     }
     
     delete<T>(ref: DocPredicate<T>): Promise<void> {

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { User } from '../models/user';
 import { Route } from '../models/route';
 import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, timeout, mapTo, delay } from 'rxjs/operators';
 
 import { auth } from 'firebase/app';
 
@@ -47,15 +47,11 @@ export class AuthService {
       displayName: user.displayName,
     }
 
-    return this.db.set(path, data)
-  }
-
-  async userDocExists(id: string) {
-    let exists = false
-    await this.db.col('users').doc(id).get().subscribe( doc => {
-      exists = doc.exists
-    })
-    return exists
+    return of(null)
+      .pipe(
+        delay(10000),
+        mapTo(this.db.update(path, data))
+      )
   }
 
   uid() {

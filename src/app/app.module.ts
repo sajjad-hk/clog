@@ -25,7 +25,9 @@ import {MatListModule} from '@angular/material/list'
 import {GnarlModule} from 'gnarls';
 import {LoadingSpinnerComponent} from './views/loading-spinner/loading-spinner.component';
 import {BooleanPipe} from './common/boolean.pipe';
-import {MatCheckboxModule} from '@angular/material/checkbox'
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { EndingModePipe } from './common/ending-mode.pipe';
+import { BelayModePipe } from './common/belay-mode.pipe'
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox'
     BelayModeComponent,
     TagsComponent,
     LoadingSpinnerComponent,
-    BooleanPipe
+    BooleanPipe,
+    EndingModePipe,
+    BelayModePipe
   ],
   imports: [
     BrowserModule,

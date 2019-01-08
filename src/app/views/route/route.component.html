@@ -4,9 +4,9 @@
             {{route?.grade?.gradeValue.value}}
         </div>
         <div class="route-belay route-belay-{{route?.belayMode}}">
-            {{route?.belayMode}}
+            {{route?.belayMode | belayMode}}
         </div>
-        <div>{{route?.endingMode | json}}</div>
+        <div>{{route?.endingMode | endingMode}}</div>
         <button class="" (click)="onDelete(route.id)">Del</button>
     </div>    
 </mat-list-item>
