@@ -9,7 +9,7 @@ export class EndingModePipe implements PipeTransform {
 
   transform(value: EndingMode): any {
     if (!_.isNil(value) && value.flash) {
-      return 'FLASH'
+      return 'FL'
     } 
     if (!_.isNil(value) && value.onSight) {
       return 'OS'
