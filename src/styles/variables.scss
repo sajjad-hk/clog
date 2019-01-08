@@ -1,5 +1,7 @@
 $modal-bg-color: rgba(0,0,0,0.4);
 $color-black: #000;
+$floating-shadow: 2px 2px 4px rgba(0,0,0,.3);
+$flat-shadow: 0 0 3px rgba(0,0,0,.25);
 $gradeColors: (
    route4a: #6229B8,
    route4aPlus: #473ECE,
@@ -39,6 +41,10 @@ $icons: (
    flashWhite: url("/assets/icons/flash-white.svg"),
    flashDark: url("/assets/icons/flash-dark.svg"),
    plusDark: url("/assets/icons/plus-dark.svg"),
-   checkWhite: url("/assets/icons/checkmark-white.svg")
+   checkWhite: url("/assets/icons/checkmark-white.svg"),
+   plusWhite: url("/assets/icons/plus-white.svg"),
+   editDark: url("/assets/icons/edit-dark.svg"),
+   trashRed: url("/assets/icons/trash-redish.svg"),
+   logoutWhite: url("/assets/icons/logout-white.svg")
 );
 

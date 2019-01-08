@@ -17,6 +17,41 @@
     text-transform: uppercase;
   }
 
+  &-logout {
+    background-image: map-deep-get($icons, "logoutWhite");
+    display: inline-block;
+    float: right;
+    height: 60px;
+    width: 40px;
+  }
+
+  &-delete {
+    background-color: #ffebeb;
+    background-image: map-deep-get($icons, "trashRed");
+    background-position: center center;
+    border-radius: 17px;
+    height: 34px;
+    margin-top: -17px;
+    position: absolute;
+    right: 40px;
+    text-align: center;
+    top: 50%;
+    width: 34px;
+  }
+
+  &-edit {    
+    background-image: map-deep-get($icons, "editDark");
+    background-position: center center;
+    border-radius: 17px;
+    height: 34px;
+    margin-top: -17px;
+    position: absolute;
+    right: 80px;
+    text-align: center;
+    top: 50%;
+    width: 34px;
+  }
+
   &-add-another {
     background-image: map-deep-get($icons, "plusDark");
     color: rgba(0,0,0,0.3);
@@ -63,6 +98,35 @@
     z-index: 1;
   } 
 
+  &-fab {
+    bottom: 40px;
+    position: fixed;    
+    right: 40px;
+  }
+
+  &-add-new-route {
+    background-color: #666;    
+    border-radius: 23px;
+    box-shadow: $floating-shadow;
+    cursor: pointer;
+    display: block;
+    height: 46px;
+    width: 46px;
+    z-index: 100;
+
+    &::before {
+      background-image: map-deep-get($icons, "plusWhite");
+      background-repeat: no-repeat;
+      content:"";      
+      display: block;
+      height: 20px;
+      left: 8px;
+      position: relative;
+      top: 0;
+      width: 20px;
+    }
+  }
+
   &-google-login {
     padding: 16px 24px 16px 50px;
     position: relative;
@@ -78,6 +142,19 @@
       top:50%;
       width: 18px;
     }
+  }
+}
+
+// button variants - todod: maybe move that somewhere
+.route-Yes {
+  .btn-edit {
+    background-color: #E7ECEE;
+  }
+}
+
+.route-No {
+  .btn-edit {
+    background-color: #fff;
   }
 }
 

@@ -7,8 +7,47 @@
     width: 100%;
 
     &-grade {
-        font-size: 3.2rem;
+        display: inline-block;
+        font-size: 2.8em;
         font-weight: bold;
+        margin-right: 10px;
+    }
+
+    &-style {
+        background-color: #374f94;
+        border-radius: 3px;
+        color: #fff;
+        display: inline-block;
+        margin-right: 5px;
+        padding: 0 3px;
+    }
+    &-belay {
+        border-radius: 3px;
+        display: inline-block;
+        margin-right: 5px;
+        padding: 0 3px;
+
+        &-Lead {
+            background-color: #2C666E;
+            border: 1px solid #2C666E;
+            color: #fff;            
+        }
+        &-Toprope {
+            border: 1px solid #2C666E;
+            color: #2C666E;            
+        }
+        &-Auto {
+            background-color: rgba(44,102,110,.18);
+            border: 1px solid #2C666E;
+            color: #2C666E;
+        }
+    }
+
+    &-No {
+        background-color:#E7ECEE;
+        border-right: 1px dashed #95989A;
+        border-top: 1px dashed #95989A;
+        border-bottom: 1px dashed #95989A;
     }
 }
 
