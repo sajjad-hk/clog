@@ -4,10 +4,12 @@
       <h3>Tags & Comments</h3>
   </div>
   <div class="new-route-wizard-main">
-
-        <section class="new-route-wizard-check">
+        <section class="new-route-wizard-check" *ngIf="!attempt">
                 <mat-checkbox id="FLASH" #f class="flash" [(ngModel)]="endingMode.flash" (change)="onChange(f)">Flash</mat-checkbox>
                 <mat-checkbox id="OS" #o class="os" [(ngModel)]="endingMode.onSight" (change)="onChange(o)">On sight</mat-checkbox>
+        </section>
+        <section *ngIf="attempt">
+          <span>Attempt</span>
         </section>
   </div>
   <div class="new-route-wizard-bottom">

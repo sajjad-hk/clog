@@ -1,4 +1,4 @@
-<div class="new-route-wizard step-2" *ngIf="display">
+<div class="new-route-wizard step-2" *ngIf="display" (dblclick)="onNext()">
         <div class="new-route-wizard-head">
                 <button class="btn-close" (click)="onClose()"></button>
                 <h3>Scale and Grade</h3>

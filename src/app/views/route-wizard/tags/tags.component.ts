@@ -12,7 +12,7 @@ export class TagsComponent implements OnInit {
     flash: false,
     onSight: false
   } as EndingMode
-
+  attempt: boolean
   display = false;
   @Output() finished: EventEmitter<any> = new EventEmitter();
   @Output() back: EventEmitter<any> = new EventEmitter();
@@ -35,7 +35,8 @@ export class TagsComponent implements OnInit {
     }
   }
 
-  show() {
+  show(success: boolean) {
+    this.attempt = !success
     this.display = true;
   }
 

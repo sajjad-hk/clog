@@ -44,7 +44,7 @@ export class RouteWizardComponent implements OnInit {
   }
   onBelayModeSelectionEnd(event: any) {
     this.newRoute.belayMode = event.belayMode;
-    this.tags.show();
+    this.tags.show(this.newRoute.succeded)
   }
   onBelayModeBack() {
     this.routeGrade.show();
