@@ -14,7 +14,7 @@ export class TagsComponent implements OnInit {
   } as EndingMode
 
   display = false;
-  @Output() finished: EventEmitter<EndingMode> = new EventEmitter();
+  @Output() finished: EventEmitter<any> = new EventEmitter();
   @Output() back: EventEmitter<any> = new EventEmitter();
   @Output() close: EventEmitter<any> = new EventEmitter();
   constructor() { }
@@ -25,10 +25,12 @@ export class TagsComponent implements OnInit {
 
     switch(e.id) {
       case 'FLASH':
-        this.endingMode.onSight = !this.endingMode.flash
+          if(this.endingMode.flash)
+            this.endingMode.onSight = !this.endingMode.flash
       break
       case 'OS':
-        this.endingMode.flash = !this.endingMode.onSight
+        if(this.endingMode.onSight)
+          this.endingMode.flash = !this.endingMode.onSight
       break
     }
   }
@@ -41,9 +43,9 @@ export class TagsComponent implements OnInit {
     this.display = false;
   }
 
-  onNext() {
+  onNext(repeat: boolean) {
     this.display = false;
-    this.finished.emit(this.endingMode);
+    this.finished.emit({ endingMode: this.endingMode, repeat: repeat});
   }
 
   onBack() {

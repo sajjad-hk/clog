@@ -11,10 +11,10 @@
         </section>
   </div>
   <div class="new-route-wizard-bottom">
-    <button class="btn btn-add-another btn-text">Log another climb</button>
+    <button class="btn btn-add-another btn-text" (click)="onNext(true)">Log another climb</button>
   </div>
   <div class="new-route-wizard-foot">
-      <button class="btn btn-done btn-text" (click)="onNext()">Done</button>
+      <button class="btn btn-done btn-text" (click)="onNext(false)">Done</button>
       <button class="btn btn-back" (click)="onBack()"></button>
   </div>  
 </div>

@@ -42,19 +42,26 @@ export class RouteWizardComponent implements OnInit {
   onRouteGradeBack() {
     this.overallState.show();
   }
-  onBelayModeSelectionEnd(event) {
+  onBelayModeSelectionEnd(event: any) {
     this.newRoute.belayMode = event.belayMode;
     this.tags.show();
   }
   onBelayModeBack() {
     this.routeGrade.show();
   }
-  onTagsSelectionEnd(event: EndingMode) {
-    this.display = false;
-    this.newRoute.endingMode = event
-    this.routeService.logRoute(this.newRoute as Route);
+  onTagsSelectionEnd(event: any) {
+    this.newRoute.endingMode = event.endingMode
+    this.routeService.logRoute(this.newRoute as Route)
+    
+    if (event.repeat) {
+      this.newRoute = {} as Route
+      this.onRouteGradeBack()
+    } else {
+      this.display = false
+    }
   }
+
   onTagsBack() {
-    this.belayMode.show();
+    this.belayMode.show()
   }
 }
