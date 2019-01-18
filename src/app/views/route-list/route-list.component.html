@@ -1,6 +1,7 @@
 <div class="route-list">
     <mat-list *ngFor="let routec of routes | async; trackBy : routeService.trackById">
-        <span>{{routec.k}}</span>
+        <span>{{routec.k | date: 'EEEE, MMMM d, y, h:mm' }}</span>
+        <span></span>
         <mat-list *ngFor="let item of routec.v">
           <clg-route [route]="item"></clg-route>
         </mat-list>
