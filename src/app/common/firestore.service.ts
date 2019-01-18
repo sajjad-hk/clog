@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import {AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection, DocumentChangeAction} from '@angular/fire/firestore'
 import { Observable } from 'rxjs'
-import {map} from 'rxjs/operators'
+import {map, timestamp} from 'rxjs/operators'
 import * as firebase from 'firebase/app'
 
 type CollectionPredicate<T> = string | AngularFirestoreCollection<T>;
@@ -66,7 +66,7 @@ export class FirestoreService {
      ****************************/
 
     set<T>(ref: DocPredicate<T>, data: any) {
-      const timestamp = this.timestamp
+      const timestamp = this.timestamps
       return this.doc(ref).set({
         ...data,
         updatedAt: timestamp,
@@ -75,10 +75,10 @@ export class FirestoreService {
     }
 
     update<T>(ref: DocPredicate<T>, data: any): Promise<void> {
-      console.log('Here update')
+      const timestamp = this.timestamps
       return this.doc(ref).update({
         ...data,
-        updatedAt: this.timestamp,
+        updatedAt: timestamp,
       });
       
     }
@@ -88,7 +88,7 @@ export class FirestoreService {
     }
     
     add<T>(ref: CollectionPredicate<T>, data): Promise<firebase.firestore.DocumentReference> {
-      const timestamp = this.timestamp;
+      const timestamp = this.timestamps
       return this.col(ref).add({
         ...data,
         updatedAt: timestamp,
@@ -98,6 +98,10 @@ export class FirestoreService {
 
     geopoint(lat: number, lng: number) {
       return new firebase.firestore.GeoPoint(lat, lng)
+    }
+
+    get timestamps() {
+      return new Date()
     }
 
 }

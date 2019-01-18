@@ -47,7 +47,6 @@ export class RouteService {
               ref
                 .where('uid', '==', user ? user.uid : null)
                 .orderBy('createdAt', 'desc')
-                .limit(25)
           )
         ),
         shareReplay(1)
@@ -56,6 +55,7 @@ export class RouteService {
 
   trackById(idx: number, route: Route) {
     return route.id
+    
   }
 
 }

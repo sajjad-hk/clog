@@ -5,6 +5,8 @@ export interface Route {
     belayMode: string
     grade: any
     endingMode: EndingMode
+    updatedAt: Date
+    createdAt: Date
 }
 
 export interface ClimbingGrade {
